@@ -15,7 +15,7 @@ on:
 
 jobs:
   scan:
-    uses: your-org-name/repository-name/.github/workflows/secret-scanning.yml@main
+    uses: DevSecOps-AppSec/reusable-workflows/.github/workflows/itLeaks_reusable_worflow.yml@main
     secrets:
       GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}  # Use secrets directly in the calling workflow
       GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE }}
