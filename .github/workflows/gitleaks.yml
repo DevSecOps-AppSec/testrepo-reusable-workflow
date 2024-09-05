@@ -15,14 +15,13 @@ on:
 
 jobs:
   scan:
-   name: Gitleaks Secret Scanning
-   runs-on: ubuntu-latest
-   steps:
-      - name: User Rerusable Code
-        uses: DevSecOps-AppSec/reusable-workflows/.github/workflows/gitLeaks_reusable_worflow.yml@main
-        env:
-         GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}  # GITHUB_TOKEN is provided automatically by GitHub
-         GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE }}
+    uses: DevSecOps-AppSec/reusable-workflows/.github/workflows/gitLeaks_reusable_worflow.yml@main
+    secrets:
+      GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE }}  
+   
+   
+   
+        
     
     
 
