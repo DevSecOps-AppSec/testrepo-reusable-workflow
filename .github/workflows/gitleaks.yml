@@ -1,0 +1,27 @@
+name: Gitleaks - Scanning Secrets in PR
+
+on:
+  push:
+    branches:
+      - 'main'
+      - 'master'
+  pull_request:
+    types:
+      - synchronize
+      - opened
+    branches:
+      - 'main'
+      - 'master'
+
+jobs:
+  scan:
+    uses: DevSecOps-AppSec/reusable-workflows/.github/workflows/gitLeaks_reusable_worflow.yml@main
+    secrets:
+      GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE }}  
+   
+   
+   
+        
+    
+    
+
